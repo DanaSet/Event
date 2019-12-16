@@ -20,7 +20,7 @@ import com.example.eventtest.helper.DataHelper;
 
 public class ListActivity extends AppCompatActivity {
     String[] daftar;
-    ListView daftarKegiatan;
+    ListView listKegiatan;
     Menu menu;
     protected Cursor cursor;
     DataHelper dbEvent;
@@ -30,14 +30,14 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_list);
 
         Button btnTambah = (Button)findViewById(R.id.btnTambah);
 
         btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ListActivity.this, TambahKegiatanActivity.class);
+                Intent i = new Intent(ListActivity.this, tambahKegiatanActivity.class);
                 startActivity(i);
             }
         });
@@ -56,10 +56,10 @@ public class ListActivity extends AppCompatActivity {
             cursor.moveToPosition(cc);
             daftar[cc] = cursor.getString(1).toString();
         }
-        daftarKegiatan = findViewById(R.id.listKegiatan);
-        daftarKegiatan.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
-        daftarKegiatan.setSelected(true);
-        daftarKegiatan.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listKegiatan = findViewById(R.id.listKegiatan);
+        listKegiatan.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
+        listKegiatan.setSelected(true);
+        listKegiatan.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
                 final String selection = daftar[arg2];
@@ -71,7 +71,7 @@ public class ListActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int item) {
                         switch (item) {
                             case 0:
-                                Intent i = new Intent(getApplicationContext(),timeActivity.class);
+                                Intent i = new Intent(getApplicationContext(),EditKegiatanActivity.class);
                                 i.putExtra("event", selection);
                                 startActivity(i);
                                 break;
@@ -81,7 +81,7 @@ public class ListActivity extends AppCompatActivity {
                 builder.create().show();
             }
         });
-        ((ArrayAdapter)daftarKegiatan.getAdapter()).notifyDataSetInvalidated();
+        ((ArrayAdapter)listKegiatan.getAdapter()).notifyDataSetInvalidated();
     }
 }
 
