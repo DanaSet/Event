@@ -19,12 +19,12 @@ import com.example.eventtest.helper.DataHelper;
 
 
 public class ListActivity extends AppCompatActivity {
+    public static ListActivity la;
     String[] daftar;
     ListView listKegiatan;
     Menu menu;
     protected Cursor cursor;
     DataHelper dbEvent;
-    public static ListActivity ma;
     private DataHelper dbCenter;
 
     @Override
@@ -32,7 +32,7 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        Button btnTambah = (Button)findViewById(R.id.btnTambah);
+        Button btnTambah = (Button)findViewById(R.id.btnSimpan);
 
         btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +42,7 @@ public class ListActivity extends AppCompatActivity {
             }
         });
 
-        ma = this;
+        la = this;
         dbCenter = new DataHelper(this);
         RefreshList();
     }
