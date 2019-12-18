@@ -17,11 +17,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_above="@id/btnSimpan">
+        android:layout_above="@id/btnAdd">
     </ListView>
 
     <Button
-        android:id="@+id/btnSimpan"
+        android:id="@+id/btnAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Buat Baru"

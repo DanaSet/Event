@@ -38,6 +38,9 @@ public class EditKegiatanActivity extends AppCompatActivity {
         editKeterangan = findViewById(R.id.editKeterangan);
         editWaktuMulai = findViewById(R.id.editWaktuMulai);
         editWaktuAkhir = findViewById(R.id.editWaktuAkhir);
+        btnSimpan = findViewById(R.id.btnAdd);
+        btnHapus = findViewById(R.id.btnDone);
+        btnKembali = findViewById(R.id.btnBack);
 
         editWaktuMulai.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,34 +103,34 @@ public class EditKegiatanActivity extends AppCompatActivity {
             }
         });
 
-//        btnSimpan.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                SQLiteDatabase db = dbHelper.getWritableDatabase();
-//                db.execSQL("UPDATE kegiatan SET nama = ('" + editNomor.getText().toString() + "', '" + editEvent.getText().toString() + "', '" + editTanggal.getText().toString() + "', '" + editKeterangan.getText().toString() + "', '" + editWaktuMulai.getText().toString() + "', '" + editWaktuAkhir.getText().toString() + "')");
-//                Toast.makeText(getApplicationContext(), "Berhasil Menambah Kegiatan", Toast.LENGTH_LONG).show();
-//                ListActivity.la.RefreshList();
-//                finish();
-//            }
-//        });
-//
-//        btnHapus.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                SQLiteDatabase db = dbHelper.getWritableDatabase();
-//                db.execSQL("DELETE FROM kegiatan WHERE event = '" + getIntent().getStringExtra("event") + "'");
-//                Toast.makeText(getApplicationContext(), "Kegiatan Telah Diselesaikan", Toast.LENGTH_LONG).show();
-//                ListActivity.la.RefreshList();
-//                finish();
-//            }
-//        });
-//
-//        btnKembali.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
+        btnSimpan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                db.execSQL("UPDATE kegiatan SET nama = ('" + editNomor.getText().toString() + "', '" + editEvent.getText().toString() + "', '" + editTanggal.getText().toString() + "', '" + editKeterangan.getText().toString() + "', '" + editWaktuMulai.getText().toString() + "', '" + editWaktuAkhir.getText().toString() + "')");
+                Toast.makeText(getApplicationContext(), "Berhasil Menambah Kegiatan", Toast.LENGTH_LONG).show();
+                ListActivity.la.RefreshList();
+                finish();
+            }
+        });
+
+        btnHapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                db.execSQL("DELETE FROM kegiatan WHERE event = '" + getIntent().getStringExtra("event") + "'");
+                Toast.makeText(getApplicationContext(), "Kegiatan Telah Diselesaikan", Toast.LENGTH_LONG).show();
+                ListActivity.la.RefreshList();
+                finish();
+            }
+        });
+
+        btnKembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
 

@@ -32,7 +32,7 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        Button btnTambah = (Button)findViewById(R.id.btnSimpan);
+        Button btnTambah = (Button)findViewById(R.id.btnAdd);
 
         btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override

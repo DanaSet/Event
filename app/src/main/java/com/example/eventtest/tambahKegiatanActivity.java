@@ -39,6 +39,9 @@ public class tambahKegiatanActivity extends AppCompatActivity {
         addKeterangan = findViewById(R.id.editKeterangan);
         addWaktuMulai = findViewById(R.id.editWaktuMulai);
         addWaktuAkhir = findViewById(R.id.editWaktuAkhir);
+        btnAdd =findViewById(R.id.btnAdd);
+        btnDone = findViewById(R.id.btnDone);
+        btnBack = findViewById(R.id.btnBack);
 
         addWaktuMulai.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,24 +104,24 @@ public class tambahKegiatanActivity extends AppCompatActivity {
             }
         });
 
-//        btnAdd.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                SQLiteDatabase db = dbHelper.getWritableDatabase();
-//                db.execSQL("INSERT INTO kegiatan (nomor, event, tanggal, keterangan, waktu_mulai, waktu_akhir) VALUES ('" + addNomor.getText().toString() + "', '" + addEvent.getText().toString() + "', '" + addKeterangan.getText().toString() + "', '" + addWaktuMulai.getText().toString() + "', '" + addWaktuAkhir.getText().toString() + "')");
-//                Toast.makeText(getApplicationContext(), "Berhasil Menambah Kegiatan", Toast.LENGTH_LONG).show();
-//                MainActivity.ma.RefreshList();
-//                finish();
-//            }
-//        });
-//
-//        btnDone.setEnabled(false);
-//
-//        btnBack.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                db.execSQL("INSERT INTO kegiatan (nomor, event, tanggal, keterangan, waktu_mulai, waktu_akhir) VALUES ('" + addNomor.getText().toString() + "', '" + addEvent.getText().toString() + "', '" + addKeterangan.getText().toString() + "', '" + addWaktuMulai.getText().toString() + "', '" + addWaktuAkhir.getText().toString() + "');");
+                Toast.makeText(getApplicationContext(), "Berhasil Menambah Kegiatan", Toast.LENGTH_LONG).show();
+                ListActivity.la.RefreshList();
+                finish();
+            }
+        });
+
+        btnDone.setEnabled(false);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
