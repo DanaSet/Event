@@ -38,9 +38,11 @@ public class EditKegiatanActivity extends AppCompatActivity {
         editKeterangan = findViewById(R.id.editKeterangan);
         editWaktuMulai = findViewById(R.id.editWaktuMulai);
         editWaktuAkhir = findViewById(R.id.editWaktuAkhir);
+
         btnSimpan = findViewById(R.id.btnSimpan);
         btnHapus = findViewById(R.id.btnHapus);
-        btnKembali = findViewById(R.id.btnKembali);
+        btnKembali = findViewById(R.id.btnkembali);
+
 
         editWaktuMulai.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -39,9 +39,10 @@ public class tambahKegiatanActivity extends AppCompatActivity {
         addKeterangan = findViewById(R.id.editKeterangan);
         addWaktuMulai = findViewById(R.id.editWaktuMulai);
         addWaktuAkhir = findViewById(R.id.editWaktuAkhir);
-        btnAdd = findViewById(R.id.btnAdd);
-        btnDone = findViewById(R.id.btnDone);
-        btnBack = findViewById(R.id.btnBack);
+
+        btnAdd = findViewById(R.id.btnSimpan);
+        btnDone = findViewById(R.id.btnHapus);
+        btnBack = findViewById(R.id.btnkembali);
 
         addWaktuMulai.setOnClickListener(new View.OnClickListener() {
             @Override

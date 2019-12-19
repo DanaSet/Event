@@ -115,7 +115,7 @@
         android:hint="Pilih Waktu Mulai"/>
 
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnSimpan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editWaktuAkhir"
@@ -124,18 +124,18 @@
         />
 
     <Button
-        android:id="@+id/btnDone"
+        android:id="@+id/btnHapus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnAdd"
+        android:layout_below="@id/btnSimpan"
         android:layout_marginTop="3dp"
         android:text="Selesai"/>
 
     <Button
-        android:id="@+id/btnBack"
+        android:id="@+id/btnkembali"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnDone"
+        android:layout_below="@id/btnHapus"
         android:layout_marginTop="3dp"
         android:text="Kembali"/>
 
